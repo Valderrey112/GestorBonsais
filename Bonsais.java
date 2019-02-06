@@ -44,4 +44,9 @@ public class Bonsais
     public int getNumId() {
         return numId;
     }
+    
+    public String getCaracteristicas() {
+        return numId + ". " + clase + " de " + tamaño + " de alto y " + años + " años. Hoja perenne:" + hojaPerenne;
+    }
+    
 }
