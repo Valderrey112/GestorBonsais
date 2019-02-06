@@ -48,10 +48,10 @@ public class Bonsais
     public String getCaracteristicas() {
         String caracteristicas = "";
         if (hojaPerenne) {
-            caracteristicas =  numId + ". " + clase + " de " + tamaño + " de alto, tiene " + años + "años y es de hoja perenne";
+            caracteristicas =  numId + ". " + clase + " de " + tamaño + " cm de alto, tiene " + años + " años y es de hoja perenne";
         }
          if (!hojaPerenne) {
-            caracteristicas = numId + ". " + clase + " de " + tamaño + " de alto, tiene " + años + "años y no es de hoja perenne";
+            caracteristicas = numId + ". " + clase + " de " + tamaño + " cm de alto, tiene " + años + " años y no es de hoja perenne";
         }
         return caracteristicas;
     }

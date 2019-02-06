@@ -26,7 +26,16 @@ public class TiendaBonsais
      */
     public void setNuevoBonsai(String claseBonsai, boolean tienePerenne, int añosBonsai, double tamañoBonsai)
     {
-        new Bonsais(claseBonsai, tienePerenne, añosBonsai, tamañoBonsai, numId);
+        Bonsais nuevoBonsai = new Bonsais(claseBonsai, tienePerenne, añosBonsai, tamañoBonsai, numId);
+        listaBonsais.add(nuevoBonsai);
         numId++;
+    }
+    
+    public String getListaBonsais() {
+        String cadena = "";
+        for (Bonsais bonsai: listaBonsais) {
+            cadena += bonsai.getCaracteristicas() + "\n";
+        }
+        return cadena;
     }
 }
