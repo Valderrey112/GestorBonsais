@@ -11,16 +11,18 @@ public class Bonsais
     private boolean hojaPerenne;
     private int años;
     private double tamaño;
+    private int numId;
     
     /**
      * Constructor for objects of class Bonsais
      */
-    public Bonsais(String claseBonsai, boolean tienePerenne, int añosBonsai, double tamañoBonsai)
+    public Bonsais(String claseBonsai, boolean tienePerenne, int añosBonsai, double tamañoBonsai, int numIdentificador)
     {
         clase = claseBonsai;
         hojaPerenne = tienePerenne;
         años = añosBonsai;
         tamaño = tamañoBonsai;
+        numId = numIdentificador;
     }
     
     public String getClase () {
@@ -37,5 +39,9 @@ public class Bonsais
     
     public double getTamaño () {
         return tamaño;
+    }
+    
+    public int getNumId() {
+        return numId;
     }
 }
