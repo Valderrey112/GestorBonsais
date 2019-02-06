@@ -22,4 +22,20 @@ public class Bonsais
         años = añosBonsai;
         tamaño = tamañoBonsai;
     }
+    
+    public String getClase () {
+        return clase;
+    }
+    
+    public boolean gethojaPerenne () {
+        return hojaPerenne ;
+    }
+    
+    public int getAños () {
+        return años;
+    }
+    
+    public double getTamaño () {
+        return tamaño;
+    }
 }
