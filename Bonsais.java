@@ -29,16 +29,32 @@ public class Bonsais
         return clase;
     }
     
+    public void setClase (String nuevaClase) {
+        clase = nuevaClase;
+    }
+    
     public boolean gethojaPerenne () {
         return hojaPerenne ;
+    }
+    
+    public void setHoja (boolean nuevaHoja) {
+        hojaPerenne = nuevaHoja;
     }
     
     public int getAños () {
         return años;
     }
     
+    public void setAños (int nuevoAño) {
+        años = nuevoAño;
+    }
+    
     public double getTamaño () {
         return tamaño;
+    }
+    
+    public void setHoja (double nuevoTamaño) {
+        tamaño = nuevoTamaño;
     }
     
     public int getNumId() {

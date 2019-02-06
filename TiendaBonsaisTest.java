@@ -48,5 +48,19 @@ public class TiendaBonsaisTest
         tiendaBo1.setNuevoBonsai("Ficus", true, 13, 13);
         assertEquals("1. Olmo de 12.0 cm de alto, tiene 12 años y no es de hoja perenne\n2. Ficus de 13.0 cm de alto, tiene 13 años y es de hoja perenne\n", tiendaBo1.getListaBonsais());
     }
+
+    @Test
+    public void TESTgetListaBonsaisOrdenados()
+    {
+        TiendaBonsais tiendaBo1 = new TiendaBonsais();
+        assertEquals("", tiendaBo1.getListaBonsaisOrdenados());
+        tiendaBo1.setNuevoBonsai("Olmo", false, 12, 12);
+        assertEquals("1. Olmo de 12.0 cm de alto, tiene 12 años y no es de hoja perenne\n", tiendaBo1.getListaBonsaisOrdenados());
+        tiendaBo1.setNuevoBonsai("Ficus", true, 14, 14);
+        assertEquals("2. Ficus de 14.0 cm de alto, tiene 14 años y es de hoja perenne\n1. Olmo de 12.0 cm de alto, tiene 12 años y no es de hoja perenne\n", tiendaBo1.getListaBonsaisOrdenados());
+        tiendaBo1.setNuevoBonsai("Ciruelo", false, 14, 12);
+        assertEquals("3. Ciruelo de 12.0 cm de alto, tiene 14 años y no es de hoja perenne\n2. Ficus de 14.0 cm de alto, tiene 14 años y es de hoja perenne\n1. Olmo de 12.0 cm de alto, tiene 12 años y no es de hoja perenne\n", tiendaBo1.getListaBonsaisOrdenados());
+    }
 }
+
 

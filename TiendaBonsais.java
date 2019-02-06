@@ -31,10 +31,40 @@ public class TiendaBonsais
         numId++;
     }
     
+    /**
+     * Metodo que devuelve un String con cada objeto del ArrayList, una en cada linea.
+     */
     public String getListaBonsais() {
         String cadena = "";
         for (Bonsais bonsai: listaBonsais) {
             cadena += bonsai.getCaracteristicas() + "\n";
+        }
+        return cadena;
+    }
+    
+    /**
+     * Metodo que devuelve un String con cada objeto del ArrayList, una en cada linea y ordenadas por años que ttiene el bonsai.
+     */
+    public String getListaBonsaisOrdenados() {
+        String cadena = "";
+        int contadorLento = 0;
+        if (listaBonsais.size() > 0) {
+            while (contadorLento< listaBonsais.size()) {
+                int contadorRapido = contadorLento + 1;
+                while (contadorRapido< listaBonsais.size()) {
+                    Bonsais añoTemporal;
+                    if (listaBonsais.get(contadorRapido).getAños()>= listaBonsais.get(contadorLento).getAños()) {
+                        añoTemporal = listaBonsais.get(contadorRapido);
+                        listaBonsais.set(contadorRapido, listaBonsais.get(contadorLento));
+                        listaBonsais.set(contadorLento, añoTemporal);
+                    }
+                    contadorRapido++;
+                }
+                contadorLento++;
+            }
+            for (Bonsais bonsai: listaBonsais) {
+                cadena += bonsai.getCaracteristicas() + "\n";
+            }
         }
         return cadena;
     }
