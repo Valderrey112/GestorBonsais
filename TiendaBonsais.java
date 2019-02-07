@@ -43,7 +43,7 @@ public class TiendaBonsais
     }
     
     /**
-     * Metodo que devuelve un String con cada objeto del ArrayList, una en cada linea y ordenadas por años que ttiene el bonsai.
+     * Metodo que devuelve un String con cada objeto del ArrayList, una en cada linea y ordenadas por años que tiene el bonsai.
      */
     public String getListaBonsaisOrdenados() {
         String cadena = "";
@@ -57,6 +57,33 @@ public class TiendaBonsais
                         añoTemporal = listaBonsais.get(contadorRapido);
                         listaBonsais.set(contadorRapido, listaBonsais.get(contadorLento));
                         listaBonsais.set(contadorLento, añoTemporal);
+                    }
+                    contadorRapido++;
+                }
+                contadorLento++;
+            }
+            for (Bonsais bonsai: listaBonsais) {
+                cadena += bonsai.getCaracteristicas() + "\n";
+            }
+        }
+        return cadena;
+    }
+    
+    /**
+     * Metodo que devuelve un String con cada objeto del ArrayList, una en cada linea y ordenadas por tamaños, siempre y cuando tengan la hoja perenne.
+     */
+    public String getListaBonsaisOrdenadosConCondicion() {
+        String cadena = "";
+        int contadorLento = 0;
+        if (listaBonsais.size() > 0) {
+            while (contadorLento< listaBonsais.size()) {
+                int contadorRapido = contadorLento + 1;
+                while (contadorRapido< listaBonsais.size()) {
+                    Bonsais tamañoTemporal;
+                    if (listaBonsais.get(contadorRapido).getTamaños()>= listaBonsais.get(contadorLento).getAños()) {
+                        tamañoTemporal = listaBonsais.get(contadorRapido);
+                        listaBonsais.set(contadorRapido, listaBonsais.get(contadorLento));
+                        listaBonsais.set(contadorLento, tamañoTemporal);
                     }
                     contadorRapido++;
                 }
